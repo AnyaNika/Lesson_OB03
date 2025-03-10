@@ -60,7 +60,7 @@ class Zoo:
         print("Список животных зоопарка:")
         for animal in self.animals:
             print(f'- {animal.name}')
-            
+
 # 5. Создайте классы для сотрудников, например, `ZooKeeper`, `Veterinarian`, которые могут иметь специфические методы
 # (например, `feed_animal()` для `ZooKeeper` и `heal_animal()` для `Veterinarian`).
 
