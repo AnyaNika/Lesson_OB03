@@ -40,9 +40,9 @@ for animal in animals:
 
 class Zoo:
     def __init__(self):
-        self.animals = []
-        self.staff = []
-        
+        self.animals = [Animal("Тигр", 5)]
+        self.staff = [ZooKeeper("Петя"), Veterinarian("Вася")]
+
     def add_animal(self, animal):
         self.animals.append(animal)
         print(f'{animal.name} добавлен в зоопарк')
@@ -51,7 +51,16 @@ class Zoo:
         self.staff.append(staff)
         print(f'{staff.name} добавлен в персонал зоопарка')
 
+    def show_staff(self):
+        print("Список сотрудников зоопарка:")
+        for staff_member in self.staff:
+            print(f'- {staff_member.name}')
 
+    def show_animals(self):
+        print("Список животных зоопарка:")
+        for animal in self.animals:
+            print(f'- {animal.name}')
+            
 # 5. Создайте классы для сотрудников, например, `ZooKeeper`, `Veterinarian`, которые могут иметь специфические методы
 # (например, `feed_animal()` для `ZooKeeper` и `heal_animal()` для `Veterinarian`).
 
@@ -88,8 +97,10 @@ for animal in animals:
 zoo.add_staff(staff1)
 zoo.add_staff(staff2)
 
+zoo.show_staff()
+zoo.show_animals()
+
 # Взаимодействия сотрудников с животными
-zoo_keeper = zoo.staff[0]
-veterinarian = zoo.staff[1]
-zoo_keeper.feed_animal(zoo.animals[0])
-veterinarian.heal_animal(zoo.animals[3])
+
+zoo.staff[0].feed_animal(zoo.animals[0])
+zoo.staff[1].heal_animal(zoo.animals[3])
